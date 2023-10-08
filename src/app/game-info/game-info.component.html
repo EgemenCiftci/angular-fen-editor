@@ -1,0 +1,41 @@
+Active Color:
+<label for="w">
+    <input type="radio" id="w" name="activeColor" value="w" [(ngModel)]="fenService.activeColor" />♙
+</label>
+<label for="b">
+    <input type="radio" id="b" name="activeColor" value="b" [(ngModel)]="fenService.activeColor" />♟︎
+</label>
+<br />
+
+Castling Availability:
+<label for="K">
+    <input type="checkbox" id="K" [(ngModel)]="fenService.castlingAvailability0" />♔
+</label>
+<label for="Q">
+    <input type="checkbox" id="Q" [(ngModel)]="fenService.castlingAvailability1" />♕
+</label>
+<label for="k">
+    <input type="checkbox" id="k" [(ngModel)]="fenService.castlingAvailability2" />♚
+</label>
+<label for="q">
+    <input type="checkbox" id="q" [(ngModel)]="fenService.castlingAvailability3" />♛
+</label>
+<br />
+
+En Passant Target Square:
+<label for="enPassantTargetSquare">
+    <input aria-label="enPassantTargetSquare" type="text" id="enPassantTargetSquare"
+        [(ngModel)]="fenService.enPassantTargetSquare" />
+</label>
+<br />
+
+Halfmove Clock:
+<label for="halfmoveClock">
+    <input aria-label="halfmoveClock" type="number" id="halfmoveClock" [(ngModel)]="fenService.halfmoveClock" />
+</label>
+<br />
+
+Fullmove Number:
+<label for="fullmoveNumber">
+    <input aria-label="fullmoveNumber" type="number" id="fullmoveNumber" [(ngModel)]="fenService.fullmoveNumber" />
+</label>

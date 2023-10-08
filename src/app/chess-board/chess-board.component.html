@@ -1,0 +1,28 @@
+<div class="chessboard">
+  <div *ngFor="
+        let col of ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        let colIndex = index
+      ">
+    <div *ngFor="let row of [8, 7, 6, 5, 4, 3, 2, 1]; let rowIndex = index" class="chessboard-square bg-light"
+      [class.bg-dark]="(rowIndex + colIndex) % 2 !== 0" (dragover)="allowDrop($event)" (drop)="drop($event)">
+      <div *ngIf="row === 1" class="notation alpha light" [class.dark]="(rowIndex + colIndex) % 2 === 0">{{col}}</div>
+      <div *ngIf="col === 'a'" class="notation numeric light" [class.dark]="(rowIndex + colIndex) % 2 === 0">{{row}}
+      </div>
+      <div [id]="rowIndex * 8 + colIndex" class="piece" draggable="true" (dragstart)="drag($event)"
+        [ngSwitch]="fenService.pieces[rowIndex * 8 + colIndex].letter">
+        <ng-container *ngSwitchCase="'R'">♖</ng-container>
+        <ng-container *ngSwitchCase="'N'">♘</ng-container>
+        <ng-container *ngSwitchCase="'B'">♗</ng-container>
+        <ng-container *ngSwitchCase="'Q'">♕</ng-container>
+        <ng-container *ngSwitchCase="'K'">♔</ng-container>
+        <ng-container *ngSwitchCase="'P'">♙</ng-container>
+        <ng-container *ngSwitchCase="'r'">♜</ng-container>
+        <ng-container *ngSwitchCase="'n'">♞</ng-container>
+        <ng-container *ngSwitchCase="'b'">♝</ng-container>
+        <ng-container *ngSwitchCase="'q'">♛</ng-container>
+        <ng-container *ngSwitchCase="'k'">♚</ng-container>
+        <ng-container *ngSwitchCase="'p'">♟︎</ng-container>
+      </div>
+    </div>
+  </div>
+</div>
